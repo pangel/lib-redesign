@@ -1,7 +1,16 @@
 %ul
   %li.source
-    %a(href='#') Melvyl (default)
-    %div The new UC-wide search engine. Has the best search features and provides additional sources if UC Libraries do not have a specific item.
-  %li.source
-    %a(href='#') UCLA Catalog
-    %div The old UCLA search engine. Choose this one if you are used to it, otherwise we recommend Melvyl.
+    %a#dlc(href='#') UCLA Digital Collections (default)
+    %div An archive of images, manuscripts and sound recordings. A great number of collections covering many different topics are available.
+    %div.subcategory
+      %p Search by type
+      %ul
+        %li 
+          %input#dlc-image(name='dlc-image' type='checkbox' checked=true) 
+          %label(for='dlc-image') Image
+        %li 
+          %input#dlc-text(name='dlc-text' type='checkbox' checked=true) 
+          %label(for='dlc-text') Text
+        %li 
+          %input#dlc-audio(name='dlc-audio' type='checkbox' checked=true) 
+          %label(for='dlc-audio') Audio

@@ -165,12 +165,14 @@ form#search .source-type .more:hover { color: #000099; }
 form#search .source-type .more:active { color: #000099; }
 form#search .source-type .more:before { content: url(/images/bullet_arrow_down.png); position: relative; top: .4em; }
 form#search .source-type .sources { position: absolute; display: none; width: 20%; }
-form#search .source-type .sources ul { font-size: 1em; margin: 0; padding: 0; width: 100%; background: white; border: 1px solid #aaaaaa; -webkit-box-shadow: 5px 5px 15px #888; -moz-box-shadow: 5px 5px 15px #888; box-shadow: 5px 5px 15px #888; }
-form#search .source-type .sources ul li { list-style-type: none; margin-left: 0px; }
-form#search .source-type .sources ul li.source a { display: block; padding: 0.2em; padding-left: .5em; text-decoration: none; font-size: 1.1em; color: black; background: #eeeeee; }
-form#search .source-type .sources ul li.source a:before { content: url(/images/bullet_go.png); margin-right: 0.4em; position: relative; top: 0.2em; }
-form#search .source-type .sources ul li.source a:hover { background: #ccc; }
-form#search .source-type .sources ul li.source div { padding: 0.6em; padding-bottom: 1em; border-style: solid; border-color: #ccc; }
+form#search .source-type .sources > ul { font-size: 1em; margin: 0; padding: 0; width: 100%; background: white; border: 1px solid #aaaaaa; -webkit-box-shadow: 5px 5px 15px #888; -moz-box-shadow: 5px 5px 15px #888; box-shadow: 5px 5px 15px #888; }
+form#search .source-type .sources > ul li { list-style-type: none; margin-left: 0px; }
+form#search .source-type .sources > ul li.source a { display: block; padding: 0.2em; padding-left: .5em; text-decoration: none; font-size: 1.1em; color: black; background: #eeeeee; }
+form#search .source-type .sources > ul li.source a:before { content: url(/images/bullet_go.png); margin-right: 0.4em; position: relative; top: 0.2em; }
+form#search .source-type .sources > ul li.source a:hover { background: #ccc; }
+form#search .source-type .sources > ul li.source div { padding: 0.6em; padding-bottom: 1em; border-style: solid; border-color: #ccc; }
+form#search .source-type .sources > ul li.source div.subcategory { padding-top: 0; }
+form#search .source-type .sources > ul li.source div.subcategory p { border-top: 1px solid #ccc; border-bottom: 1px solid #ccc; margin-bottom: .3em; padding: .2em 0em; }
 
 .leftcol { display: inline; float: left; margin-right: 10px; width: 470px; clear: both; }
 * html .leftcol { overflow-x: hidden; }

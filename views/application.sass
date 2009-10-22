@@ -34,8 +34,7 @@ h4
   
 form#search
   padding-left: 0.5em
-  float: left  
-    
+  float: left
   .text-wrapper
     width: 100%
     float: left
@@ -75,7 +74,7 @@ form#search
       position: absolute
       display: none
       width: 20%
-      ul
+      & > ul
         +no-bullets
         font-size: 1em
         margin: 0
@@ -85,7 +84,6 @@ form#search
         border: 1px solid #aaaaaa
         +box-shadow("5px","5px","15px","#888")
         li.source 
-  
           a
             display: block
             padding: 0.2em
@@ -109,6 +107,15 @@ form#search
             padding-bottom: 1em
             border-style: solid 
             border-color: #ccc
+            
+          div.subcategory
+            padding-top: 0
+            
+            p
+              border-top: 1px solid #ccc
+              border-bottom: 1px solid #ccc
+              margin-bottom: .3em
+              padding: .2em 0em
 
 .leftcol
   +column(12, false)

@@ -11,7 +11,7 @@ $(document).ready(function() {
   $('.more').hover(
     function() {
       $(this).parent().next().slideDown("fast");
-      $(this).css({"border-color":"#aaa", "color":"white", "background":"#888"}); 
+      $(this).css({"border-color":"#aaa"}); 
     },
     function() { }
   );
@@ -20,11 +20,24 @@ $(document).ready(function() {
     function() { },
     function() {
       $('.sources', this).eq(0).slideUp("fast");
-      $('.more', this).css({"border-color":"#fff", "color":"#000099", "background":"#fff"}); 
+      $('.more', this).css({"border-color":"#fff"}); 
     });
-
+  
+  $('#search').keydown(function (e) {
+    if (e.keyCode == 13) {
+      $(this).submit();
+    }
+  });
+  
   bindSource('#books','melvyl');
   bindSource('#melvyl','melvyl');
   bindSource('#catalog','catalog');
-
+  bindSource('#other','dlc');
+  bindSource('#dlc','dlc');
+  bindSource('#scholar','scholar');
+  
+  $('#ucladb').click(function() {
+    alert("Not implemented yet.")
+    return false;
+  });
 });
