@@ -1,10 +1,9 @@
 @import base.sass
 
-+blueprint-form
-
 #container
   +container
   font-family: Helvetica, Arial, sans-serif
+  
 h1
   font-size: 1.3em
   color: white
@@ -17,7 +16,7 @@ h1
 
 h2
   font-size: 3.5em
-  margin-top: 1.6em
+  margin-top: 0.7em
   margin-bottom: 0
   
 h3
@@ -33,26 +32,122 @@ h4
   color: #F39A00
   padding-left: 0.2em
   
-form.search
+form#search
   padding-left: 0.5em
+  float: left  
+    
+  .text-wrapper
+    width: 100%
+    float: left
+    
+    input.text
+      margin-right: 0.7em
+      clear: both
+      width: 100%
   
-  input.text
-    margin-right: 0.7em
+  .sources-wrapper
+    margin-top: 4.5em
+
+  .source-type
+    float: left
+    margin-right: 2em
     
-ul
-  +no-bullets
-  padding-left: 0.2em
-  li
+    .search-modes
+      text-align: center
+    
+    .more
+      +border-radius-top("12px")
+      border-style: solid
+      border-width: 1px 1px 0px 1px
+      border-color: #fff
+      display: block
+      font-size: 0.9em
+      text-decoration: none
+      margin-top: 1em
+      padding: 0em 1.4em 0.4em 1em
+      +link-colors(#009, #009, #009, #009, #009)
+      &:before
+        content: url(/images/bullet_arrow_down.png)
+        position: relative
+        top: .4em
+        
+    .sources
+      position: absolute
+      display: none
+      width: 20%
+      ul
+        +no-bullets
+        font-size: 1em
+        margin: 0
+        padding: 0
+        width: 100%
+        background: white
+        border: 1px solid #aaaaaa
+        +box-shadow("5px","5px","15px","#888")
+        li.source 
+  
+          a
+            display: block
+            padding: 0.2em
+            padding-left: .5em
+            text-decoration: none
+            font-size: 1.1em
+            color: black
+            background: #eeeeee
+            
+            &:before
+              content: url(/images/bullet_go.png)
+              margin-right: 0.4em
+              position: relative
+              top: 0.2em
+              
+            &:hover
+              background: #ccc
+              
+          div
+            padding: 0.6em
+            padding-bottom: 1em
+            border-style: solid 
+            border-color: #ccc
+
+.leftcol
+  +column(12, false)
+  clear: both
+.rightcol
+  +column(12, true)
+
+.bigcol
+  +column(24)
+  +clear
+
+.leftcol, .rightcol, .bigcol
+  ul
+    +no-bullets
+    padding-left: 0.2em
+    
+    li
+      margin-top: 1em
+      margin-bottom: 0.2em
+  
+    a
+      +default-link-style 
+      font-size: 1.2em
+      font-weight: bold
+      display: block
+  
+    span
+      color: #222222
+
+.libraries
+  +column(24)
+  
+  table
     margin-top: 1em
-    margin-bottom: 0.2em
+    line-height: 2
     
-    
-  a
-    +hover-link
-    +link-colors(#000, #00c, #c00, #000, #00c) 
-    font-size: 1.2em
-    font-weight: bold
-    display: block
-    
-  span
-    color: #222222
+    a
+      +table-link-style
+
+#bottom
+  +column(24)
+

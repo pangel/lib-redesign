@@ -14,93 +14,103 @@
       %h2 Welcome.
       
       %h3 What are you looking for?
-      %form.search(action='/' method='get')
-        %input.text(type='text' name='query')
-        %input(type='button' name='books' value='Books')
-        %input(type='button' name='articles' value='Articles')
-        %input(type='button' name='dlc' value='Other media types')
+      %form#search(action='/' method='get')
+        .text-wrapper
+          %input.text(type='text' name='query')
+          %input#source(type='hidden' name='source')
+        .sources-wrapper
+          .source-type
+            .search-modes
+              %input#books(type='button' name='books' value='Books')
+              %a.more(href='#') Other book sources
+            .sources
+              =partial(:book_sources)
+          .source-type
+            .search-modes
+              %input#articles(type='button' name='articles' value='Articles')
+              %a.more(href='#') Other article sources
+            .sources
+              =partial(:article_sources)
+          .source-type
+            .search-modes
+              %input#other(type='button' name='dlc' value='Other media types')
+              %a.more(href='#') Other sources
+            .sources
+              =partial(:other_sources)
       
-      %h4 Your library account
-      %ul
-        %li
-          %a(href='#') Renew your books
-          %span You will be charged unless you tell us that you want to keep them.
-        %li
-          %a(href='#') Course reserves
-          %span Get the material for your classes.
-          
-      %h4 Tools
-      %ul
-        %li
-          %a(href='#') For students with disabilities
-          %span A number of services are available for you, including text-to-speech software and a remote borrowing process.
-        %li
-          %a(href='#') Citation linker
-          %span Give us the citation. We will give you the article.
-        %li
-          %a(href='#') RSS Feeds
-          %span We can keep you posted on our latest acquisitions in nearly 80 fields.
-        %li
-          %a(href='#') Subject specialist
-          %span Get in touch with a librarian who knows your area of research like his or her pocket.
-        %li
-          %a(href='#') Off-campus access
-          %span Using a VPN (Virtual Private Network), you can access resources that are normally restricted to on-campus access.
-        %li
-          %a(href='#') Copying and printing
-          %span You can copy and print from all UCLA libraries. Click here to find out the printing rates and the extra services, such as document delivery, offered by UCLA.
+      .leftcol
+        %h4 Your library account
+        %ul
+          %li
+            %a(href='#') Course reserves
+            %span Get the material for your classes.
+          %li
+            %a(href='#') Renew your books
+            %span You will be charged unless you tell us that you want to keep them.
+          %li
+            %a(href='#') Inter-library loan
+            %span What you're looking for is not in UCLA? Have it delivered to the campus from another UC Library.
+          %li
+            %a(href='#') Recall an item
+            %span Ask the library to recall an item that has been checked out by someone else.
+          %li
+            %a(href='#') Cannot find something
+            %span Let us know if you could not find an item that should have been on the shelves.
+          %li
+            %a(href='#') Loan periods, return locations, and fines
+            %span Learn for how long you can borrow items, where to return them, and how much you'll be charged if you fail to return them in time.
+          %li
+            %a(href='#') Get a library card
+        
+
+            
+      .rightcol
+        %h4 Help
+        %ul
+          %li
+            %a(href='#') Live help
+            %span If you have any questions, chat with a librarian! Open 24/7.
+          %li
+            %a(href='#') Students with disabilities
+            %span A number of services are available for you, including text-to-speech software and a remote borrowing process.
+          %li
+            %a(href='#') Research guides
+            %span Organized by subject and by course, these guides give you the essential sources that you need to get started in your research.
+          %li
+            -# Mixes "How do I" with "Interactive tutorials"
+            %a(href='#') Learn how to research
+            %span Research requires skills that are acquired over time. Click here to access the research advices, tutorials and workshops that UCLA can offer you.
+          %li
+            %a(href='#') Subject specialist
+            %span Get in touch with a librarian who knows your area of research like his or her pocket.
+          %li
+            %a(href='#') Computing services
+            %span Find out where you can borrow laptopts, access internet or organise group research.
+      .bigcol
+        %h4 Tools
+        .leftcol
+          %ul
+            %li
+              %a(href='#') Citation linker
+              %span Give us the citation. We will give you the article.
+            %li
+              %a(href='#') RSS Feeds
+              %span We can keep you posted on our latest acquisitions in nearly 80 fields.
+        .rightcol
+          %ul
+            %li
+              %a(href='#') Off-campus access
+              %span Using a VPN (Virtual Private Network), you can access resources that are normally restricted to on-campus access.
+            %li
+              %a(href='#') Copying and printing
+              %span You can copy and print from all UCLA libraries. Click here to find out the printing rates and the extra services, such as document delivery, offered by UCLA.
   
-      %h4 Get help
-      %ul
-        %li
-          %a(href='#') Live help
-          %span If you have any questions, chat with a librarian! Open 24/7.
-        %li
-          %a(href='#') Missing item
-          %span Let us know if you could not find something that should have been on the shelves.
-        %li
-          %a(href='#') Research guides
-          %span Organized by subject and by course, these guides give you an overview of the source you need to get started in your research.
-        %li
-          -# Mixes "How do I" with "Interactive tutorials"
-          %a(href='#') Learn how to research
-          %span Research requires skills that are acquired over time. Click here to access the research advices, tutorials and workshops that UCLA can offer you.
-  
-      %h4 Library procedures
-      %ul
-        %li
-          %a(href='#') Get a library card
-        %li
-          %a(href='#') Inter-library loan
-          %span What you're looking for is not in UCLA? Have it delivered to the campus from another UC Library.
-        %li
-          %a(href='#') Recall an item
-          %span Ask the library to recall an item that has been checked out by someone else.
-        %li
-          %a(href='#') Loan periods, return locations, and fines.
-          %span Learn for how long you can borrow items, where to return them, and how much you'll be charged if you fail to return them in time.
-        %li
-          -# FIXME this section is unclear
-          %a(href='#') Intellectual property
-          %span Learn about UCLA policies regarding scholarly communication.
-      
-      %h4 Places
-      %ul
-        %li
-          %a(href='#') Computing services
-          %span Find out where you can borrow laptopts, access internet or organise group research.
-        %li
-          %a(href='#') Libraries: location, hours, specialty, website
-          %span Here is essential information regarding UCLA Libraries. Click the link for more details.
-          %table
-            %thead
-              %tr
-                %th
-                  Blabla
-            %tbody
-              %tr
-                %td
-                  Table Data
-          
+        
+      .libraries
+        %h4 Libraries hours and details
+        =partial(:libraries)
       #bottom>
         %a(href='http://github.com/pangel/collections/issues') Something wrong? Click here!
+    %script(type='text/javascript' src='http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js')
+    %script(type='text/javascript' src='http://ajax.googleapis.com/ajax/libs/jqueryui/1.7.2/jquery-ui.min.js')
+    %script(type='text/javascript' src='js/main.js')

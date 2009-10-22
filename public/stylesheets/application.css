@@ -121,28 +121,86 @@ input.text, input.title { width: 300px; }
 
 textarea { width: 390px; height: 250px; }
 
+.clear { clear: both; }
+
+.nowrap { white-space: nowrap; }
+
+.clearfix { overflow: hidden; display: inline-block; }
+.clearfix { display: block; }
+
+.small { font-size: .8em; margin-bottom: 1.875em; line-height: 1.875em; }
+
+.large { font-size: 1.2em; line-height: 2.5em; margin-bottom: 1.25em; }
+
+.first { margin-left: 0; padding-left: 0; }
+
+.last { margin-right: 0; padding-right: 0; }
+
+.top { margin-top: 0; padding-top: 0; }
+
+.bottom { margin-bottom: 0; padding-bottom: 0; }
+
 #container { width: 950px; margin: 0 auto; overflow: hidden; display: inline-block; font-family: Helvetica, Arial, sans-serif; }
 #container { display: block; }
 
 h1 { font-size: 1.3em; color: white; padding: .3em 0; background: #536895; text-align: center; }
 h1 .ucla-logo { font-weight: bold; }
 
-h2 { font-size: 3.5em; margin-top: 1.6em; margin-bottom: 0; }
+h2 { font-size: 3.5em; margin-top: 0.7em; margin-bottom: 0; }
 
 h3 { font-size: 1.8em; padding-left: 0.2em; margin-top: 0.2em; margin-bottom: 0.5em; }
 
 h4 { font-size: 1.6em; margin-bottom: 0.2em; margin-top: 2em; color: #F39A00; padding-left: 0.2em; }
 
-form.search { padding-left: 0.5em; }
-form.search input.text { margin-right: 0.7em; }
+form#search { padding-left: 0.5em; float: left; }
+form#search .text-wrapper { width: 100%; float: left; }
+form#search .text-wrapper input.text { margin-right: 0.7em; clear: both; width: 100%; }
+form#search .sources-wrapper { margin-top: 4.5em; }
+form#search .source-type { float: left; margin-right: 2em; }
+form#search .source-type .search-modes { text-align: center; }
+form#search .source-type .more { border-top-left-radius: 12px; -moz-border-radius-topleft: 12px; -webkit-border-top-left-radius: 12px; border-top-right-radius: 12px; -moz-border-radius-topright: 12px; -webkit-border-top-right-radius: 12px; border-style: solid; border-width: 1px 1px 0px 1px; border-color: #fff; display: block; font-size: 0.9em; text-decoration: none; margin-top: 1em; padding: 0em 1.4em 0.4em 1em; color: #000099; }
+form#search .source-type .more:visited { color: #000099; }
+form#search .source-type .more:focus { color: #000099; }
+form#search .source-type .more:hover { color: #000099; }
+form#search .source-type .more:active { color: #000099; }
+form#search .source-type .more:before { content: url(/images/bullet_arrow_down.png); position: relative; top: .4em; }
+form#search .source-type .sources { position: absolute; display: none; width: 20%; }
+form#search .source-type .sources ul { font-size: 1em; margin: 0; padding: 0; width: 100%; background: white; border: 1px solid #aaaaaa; -webkit-box-shadow: 5px 5px 15px #888; -moz-box-shadow: 5px 5px 15px #888; box-shadow: 5px 5px 15px #888; }
+form#search .source-type .sources ul li { list-style-type: none; margin-left: 0px; }
+form#search .source-type .sources ul li.source a { display: block; padding: 0.2em; padding-left: .5em; text-decoration: none; font-size: 1.1em; color: black; background: #eeeeee; }
+form#search .source-type .sources ul li.source a:before { content: url(/images/bullet_go.png); margin-right: 0.4em; position: relative; top: 0.2em; }
+form#search .source-type .sources ul li.source a:hover { background: #ccc; }
+form#search .source-type .sources ul li.source div { padding: 0.6em; padding-bottom: 1em; border-style: solid; border-color: #ccc; }
 
-ul { padding-left: 0.2em; }
-ul li { list-style-type: none; margin-left: 0px; }
-ul li { margin-top: 1em; margin-bottom: 0.2em; }
-ul a { text-decoration: none; color: black; font-size: 1.2em; font-weight: bold; display: block; }
-ul a:hover { text-decoration: underline; }
-ul a:visited { color: black; }
-ul a:focus { color: #0000cc; }
-ul a:hover { color: #0000cc; }
-ul a:active { color: #cc0000; }
-ul span { color: #222222; }
+.leftcol { display: inline; float: left; margin-right: 10px; width: 470px; clear: both; }
+* html .leftcol { overflow-x: hidden; }
+
+.rightcol { display: inline; float: left; margin-right: 0; width: 470px; }
+* html .rightcol { overflow-x: hidden; }
+
+.bigcol { display: inline; float: left; margin-right: 10px; width: 950px; clear: both; }
+* html .bigcol { overflow-x: hidden; }
+
+.leftcol ul, .rightcol ul, .bigcol ul { padding-left: 0.2em; }
+.leftcol ul li, .rightcol ul li, .bigcol ul li { list-style-type: none; margin-left: 0px; }
+.leftcol ul li, .rightcol ul li, .bigcol ul li { margin-top: 1em; margin-bottom: 0.2em; }
+.leftcol ul a, .rightcol ul a, .bigcol ul a { text-decoration: none; color: black; font-size: 1.2em; font-weight: bold; display: block; }
+.leftcol ul a:hover, .rightcol ul a:hover, .bigcol ul a:hover { text-decoration: underline; }
+.leftcol ul a:visited, .rightcol ul a:visited, .bigcol ul a:visited { color: black; }
+.leftcol ul a:focus, .rightcol ul a:focus, .bigcol ul a:focus { color: #0000cc; }
+.leftcol ul a:hover, .rightcol ul a:hover, .bigcol ul a:hover { color: #0000cc; }
+.leftcol ul a:active, .rightcol ul a:active, .bigcol ul a:active { color: #cc0000; }
+.leftcol ul span, .rightcol ul span, .bigcol ul span { color: #222222; }
+
+.libraries { display: inline; float: left; margin-right: 10px; width: 950px; }
+* html .libraries { overflow-x: hidden; }
+.libraries table { margin-top: 1em; line-height: 2; }
+.libraries table a { text-decoration: none; color: #0000cc; }
+.libraries table a:hover { text-decoration: underline; }
+.libraries table a:visited { color: black; }
+.libraries table a:focus { color: #0000cc; }
+.libraries table a:hover { color: #0000cc; }
+.libraries table a:active { color: #cc0000; }
+
+#bottom { display: inline; float: left; margin-right: 10px; width: 950px; }
+* html #bottom { overflow-x: hidden; }
